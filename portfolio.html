@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hardy photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+          }
+        }
+    </script>
+</head>
+<body>
+    <nav class="desktop-nav">
+        <div class="logo">Hardy</div>
+        <div>
+            <ul class="navlinks">
+                <li>About me</li>
+                <li>Contacts</li>
+            </ul>
+        </div>
+    </nav>
+    <section class="profile">
+        <div class="homepage-container">
+            <p class="home_title">Hey,</p>
+            <p class="home_title">I'm Hardy</p>
+            <p class="home_text_2">A <span class="b">PHOTOGRAPHER</span> WITH 6
+                YEARS OF EXPERIENCE IN THE
+                INDUSTRY. I SPECIALIZE IN
+                CREATING <span class="u">LONG LASTING MEMORIES</span>
+                FOR SPECIAL OCCASIONS
+            </p>
+        <div class="buttons">
+            <button class="btn1" @click="toggleDarkMode">Toggle Dark Mode</button>
+        </div>
+        </div>
+        <div class="section_prof_pic">
+            <img src="https://images.unsplash.com/photo-1625492922105-5914617fd869?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2515&q=80" alt="hardy">
+        </div>
+        
+    </section>
+    <!--Gallery-->
+    <section class="gallery">
+        <div class="gallerytext">
+            <h1>Projects</h1>
+        </div>
+        <div class="row"> 
+            <div class="column">
+              <img src="https://images.unsplash.com/photo-1689890075754-f36045eaadc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw0MDc0NjZ8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=60" style="width:100%">
+              <img src="https://images.unsplash.com/photo-1688383213635-9bc2fc25103d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mnw0MDc0NjZ8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=60" style="width:100%">
+              <img src="https://images.unsplash.com/photo-1686740172488-6a680069affb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3w0MDc0NjZ8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=60" style="width:100%">
+             
+            </div>
+            <div class="column">
+              <img src="https://images.unsplash.com/photo-1686453292055-e07d06752f8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw4MDg5Nzk2NHx8ZW58MHx8fHx8&auto=format&fit=crop&w=1200&q=60" style="width:100%">
+              <img src="https://images.unsplash.com/photo-1596836530514-3b80da244256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mnw4MDg5Nzk2NHx8ZW58MHx8fHx8&auto=format&fit=crop&w=1200&q=60" style="width:100%">
+              
+            </div>  
+            <div class="column">
+              <img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxOTMxNDUyfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=1200&q=60" style="width:100%">
+              <img src="https://images.unsplash.com/photo-1554049264-8ff0bee7eacd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3wxOTMxNDUyfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=1200&q=60" style="width:100%">
+              <img src="https://images.unsplash.com/photo-1634827023822-844b925ddced?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHwxOTMxNDUyfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=1200&q=60" style="width:100%">
+             
+            </div>
+    </section>
+    <!--Brief-->
+    <section class="brief">
+        <div>
+            <h1>Give Us a Brief</h1>
+            <form @submit.prevent="brief">
+                <div>
+                    <label for="fname">First Name</label>
+                    <input v-model="fname" type="text" placeholder="Richard">
+    
+                    <label for="lname">Last Name</label>
+                    <input v-model="lname" type="text" placeholder="Smith">
+                    
+                    <label for="email">Email</label>
+                    <input v-model="email" type="email" placeholder="richardsmith@email.com">
+                </div>
+                
+                <div>
+                    <label for="select">Select what suits you</label><br>
+                    <select v-model="purpose">
+                        <option value="Scoial Media">Social Media</option>
+                        <option value="Online Ads">Online Ads</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="brieftext">
+                    <label for="brief">What are you looking for ?</label><br>
+                <textarea v-model="messages" placeholder="your message"></textarea>
+                </div>
+                
+
+
+            </form>
+        </div>
+    </section>
+    <!--Contact-->
+    <section class="contacts">
+        <div class="contacttext">
+            <p>Contact</p>
+        </div>
+        <div class="contact-box">
+            <div class="contact-left">
+                <div >
+                    <div class="rectangle">
+                        <p class="email">hello@example.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-right">
+                <ul class="social-links">
+                    <li class="social-text">Instagram</li>
+                    <li class="social-text">Facebook</li>
+                    <li class="social-text">Twitter</li>
+                    <li class="social-text">LinkedIn</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <script type="module">
+        import { createApp, ref } from 'vue';
+        import { createApp } from 'vue'
+
+        let id = 0
+
+        createApp({
+            setup() {
+                const darkMode = ref(false);
+
+                const toggleDarkMode = () => {
+                    darkMode.value = !darkMode.value;
+                };
+
+                return { darkMode, toggleDarkMode };
+            },
+
+            data(){
+                return{
+                    fname: '',
+                    lname: '',
+                    email: '',
+                    purpose: '',
+                    messages: '',
+                    
+                }
+            },
+            methods: {
+                
+                
+            },
+        }).mount('#app')
+    </script>
+</body>
+</html>
